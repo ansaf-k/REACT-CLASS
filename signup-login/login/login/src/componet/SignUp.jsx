@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.css'
 
-function SignUp() {
+function SignUp({ onSignUpSuccess }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -39,8 +39,14 @@ function SignUp() {
     setEmail('');
     setPassword('');
     setError('');
-    setSuccess('User registered successfully! Please log in.');
+    // setSuccess('User registered successfully! Please log in.');
+
+    //after successfull signup
+    
+      onSignUpSuccess(); // Switch to the login form
   };
+
+
 
   return (
     <div className="container">
